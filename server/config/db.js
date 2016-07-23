@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/newDatabaseName');
+mongoose.connect('mongodb://localhost/surveys');
 
 var models_path = __dirname + "/../models"
 

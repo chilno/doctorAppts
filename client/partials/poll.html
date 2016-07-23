@@ -1,0 +1,34 @@
+<h1 ng-if="!user.name">Sorry! you have to <a href="#/">Login</a> first</h1>
+<div ng-if="user.name">
+	<a class="pull-right" href="#/dashboard">Go to Polls</a>
+	<h1>{{user.name}},</h1> <h1>{{poll.question}}</h1>
+
+	<table class="table">
+		<thead>
+			<th>Option</th>
+			<th>Current Count of Votes</th>
+			<th>Action</th>
+		</thead>
+		<tr>
+			<td >{{poll.option1}}</td>
+			<td >{{poll.count1}}</a></td>
+			<td ><button class="btn btn-info" ng-click="voteUp('count1')">Vote</button></td>
+
+		</tr>
+		<tr>
+			<td >{{poll.option2}}</td>
+			<td >{{poll.count2}}</a></td>
+			<td><button class="btn btn-info" ng-click="voteUp('count2')">Vote</button></td>
+		</tr>
+		<tr>
+			<td >{{poll.option3}}</td>
+			<td >{{poll.count3}}</a></td>
+			<td><button class="btn btn-info" ng-click="voteUp('count3')">Vote</button></td>
+		</tr>
+		<tr>
+			<td >{{poll.option4}}</td>
+			<td >{{poll.count4}}</a></td>
+			<td><button class="btn btn-info" ng-click="voteUp('count4')">Vote</button></td>
+		</tr>
+	</table>
+</div>

@@ -6,7 +6,7 @@
 -->
 <html ng-app = 'Myapp'>
 <head>
-	<title>New guy</title>
+	<title>Mini Store</title>
 
 	<!-- 
 		We are importing our angular script as 
@@ -15,6 +15,7 @@
 		 if we set that folder as a static folder 
 		 in our server.js file
 	 -->
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
     <script src="angular/angular.js"></script>
     <script src="angular-route/angular-route.js"></script>
 
@@ -28,22 +29,26 @@
 	a script tag for each one.
  -->
     <script src = "app.js"></script>
-    <script src = "/controllers/indexController.js"></script>
-    <script src = "/factories/dummyFactory.js"></script>
+    <!-- controllers -->
+<!--     <script src = "/controllers/dashController.js"></script>
+    <script src = "/controllers/ordersController.js"></script>
+    <script src = "/controllers/productsController.js"></script> -->
+    <script src = "/controllers/surveysController.js"></script>
+
+	<!-- factories -->
+    <script src = "/factories/surveysFactory.js"></script>
 
 
 </head>
 <body>
-
-	<div class = 'container'>
-		<h1>This is working</h1>
-		
 		<!-- 
 		this is where our partials will be loaded.
 		treat this index.html file like a template. Stuff that could go in here
 		is like a general navbar and footer. 
 		 -->
+		<div class="container">
 		<div ng-view></div>
+		</div>
 	</div>
 </body>
 </html>

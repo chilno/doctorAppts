@@ -11,8 +11,23 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 		$routeProvider
 			.when('/', 
 			{
-				controller: 'indexController',
+				controller: 'surveysController',
 				templateUrl: "partials/index.html"
 			})
+			.when('/dashboard', {
+				controller: "surveysController", 
+				templateUrl: "partials/dashboard.html"
+			})
+			.when('/create', 
+			{
+				controller: 'surveysController', 
+				templateUrl: "partials/new.html"
+			})	
+			.when('/poll/:id',
+			{
+				controller: 'surveysController',
+				templateUrl: "partials/poll.html"
+			})
+			.otherwise({redirectTo:'/'});		
 	})
 }());
