@@ -20,7 +20,7 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 			})
 			.when('/create', 
 			{
-				controller: 'surveysController', 
+				controller: 'newController', 
 				templateUrl: "partials/new.html"
 			})	
 			.when('/poll/:id',

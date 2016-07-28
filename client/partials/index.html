@@ -1,29 +1,22 @@
-<h4>Your Name:</h4>
+<div class="pull-right"><a href="#/create">Add a new Appointment</a> | <a href="#/" ng-click="deleteUser()">Logout</a></div>
+<h1>Doctors's Appointments</h1>
+<h2>Welcome {{user.name}}</h2>
 
-<form class="col-md-6">
-	<div id="addUser">
-		<input class="form-control" type="text" placeholder="Name...." ng-model="newUser.name">
-		<input class="form-control btn btn-info" type="submit" value="Login" ng-click="createUser()">
-	</div>
-	<br>
-</form>
+<input class="form-control pull-right" type="text" placeholder="Search Name..." ng-model="search">
+<table class="table">
+	<thead>
+		<th>Date</th>
+		<th>Time</th>
+		<th>Patient Name</th>
+		<th>Complain</th>
+	</thead>
+	<tr ng-repeat="appt in appts | filter: search | orderBy: appts">
+		<td >{{appt.date | date:'MMMM dd yyyy'}}</td>
+		<td >{{appt.time | date:'h:mm a'}}</a></td>
+		<td >{{appt.name}}</td>
+		<td ><p>{{appt.complain}}</p><button ng-if="appt.name == user.name" class="btn btn-danger pull-right" ng-click="deleteAppt(appt)">Cancel</button></td>
+	</tr>
+</table>
+<p ng-if="error" style="color:red">{{error}}</p>
 
 
-<!-- <div class="col-md-12">
-	<div  id="addProduct">
-		<input class="form-control" type="text" placeholder="Search Name..." ng-model="search">
-		<table class="table">
-			<thead>
-				<th>Customer Name</th>
-				<th>Created At</th>
-				<th>Actions</th>
-			</thead>
-			<tr ng-repeat="customer in customers | filter: search">
-				<td >{{customer.name}}</td>
-				<td >{{customer.createdAt}}</td>
-				<td ><button class="btn btn-danger" ng-click="deleteCustomer(customer)">Delete</button></td>
-			</tr>
-		</table>
-	</div>
-
-</div> -->

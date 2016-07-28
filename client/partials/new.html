@@ -1,21 +1,18 @@
-<h1 ng-if="!user.name">Sorry! you have to <a href="#/">Login</a> first</h1>
+<h2 ng-if="!user.name">Sorry! you have to <a href="#/">Login</a> first</h2>
 <div ng-if="user.name">
-	<a class="pull-right" href="#/dashboard">Cancel</a>
-	<h1 >Hey {{user.name}}, Put the question and options here:</h1>
-	<label>Question:
-		<input class="form-control col-md-10" type="text" ng-model="newSurvey.question">
+	<a class="pull-right" href="#/">Cancel</a>
+	<h1 >New Appointment</h1>
+	<label>Date:
+		<input class="form-control col-md-10" type="date" ng-model="newAppt.date">
 	</label>
-	<label>Option 1:
-		<input class="form-control col-md-10" type="text" ng-model="newSurvey.option1">
+	<label>Time:
+		<input class="form-control col-md-10" type="time" min="08:00:00" max="17:00:00" ng-model="newAppt.time">
 	</label>
-	<label>Option 2:
-		<input class="form-control col-md-10" type="text" ng-model="newSurvey.option2">
+	<label>Complain:
+		<textarea class="form-control" ng-model="newAppt.complain"></textarea>
 	</label>
-	<label>Option 3:
-		<input class="form-control col-md-10" type="text" ng-model="newSurvey.option3">
-	</label>
-	<label>Option 4:
-		<input class="form-control col-md-10" type="text" ng-model="newSurvey.option4">
-	</label>
-	<button class="btn btn-success" ng-click="createPoll()">Create Poll</button>
+	<a class="btn btn-danger" href="#/">Cancel</a>
+	<button class="btn btn-success" ng-click="createAppt()">Add Appointment</button>
+	<p ng-if="error" style="color:red">{{error}}</p>
+	<p ng-if="errors" style="color:red">{{errors.time.message}}</p>
 </div>
